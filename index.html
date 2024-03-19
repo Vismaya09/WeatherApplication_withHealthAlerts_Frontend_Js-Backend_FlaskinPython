@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Webapp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="text-black p-8" style="background-color: rgb(94 234 212)">
+    <h1 class="text-center text-4xl font-bold mb-4">Weather Webapp</h1>
+
+    <div class="mb-4">
+        <div class="grid grid-cols-1 gap-4 mb-4">
+            <input type="text" id="address-input" placeholder="Enter location" class="p-3 border rounded text-black focus:outline-none focus:ring focus:border-blue-500">
+        </div>
+        <div class="grid grid-cols-1 gap-4 place-items-center">
+            <button onclick="getLocation()" class="p-3 bg-blue-500 text-white rounded">Get Location</button>
+        </div>    
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
+            <h2 class="text-2xl font-semibold mb-4">Location Details</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <p class="font-semibold">Location:</p>
+                    <p id="loc"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Latitude:</p>
+                    <p id="lat"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Longitude:</p>
+                    <p id="lon"></p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-4">Weather Details</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <p class="font-semibold">Time:</p>
+                    <p id="time"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Temperature:</p>
+                    <p id="temp"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Apparent Temperature:</p>
+                    <p id="app_temp"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Humidity:</p>
+                    <p id="humidity"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Precipitation Probability:</p>
+                    <p id="precipitation_prob"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Precipitation:</p>
+                    <p id="precipitation"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Pressure:</p>
+                    <p id="pressure"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Cloud Cover:</p>
+                    <p id="cloud_cover"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Visibility:</p>
+                    <p id="visibility"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Wind Speed:</p>
+                    <p id="wind_speed"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Wind Direction:</p>
+                    <p id="wind_direction"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 place-items-center">
+        <button onclick="getWeather();" class="p-3 bg-green-500 text-white rounded">Get Weather</button>
+    </div>    
+
+</body>
+
+</html>
